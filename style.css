@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Happy Monkey", system-ui;
+    /* font-weight: 400;
+    font-style: normal; */
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.4s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.word-display .letter {
+    font-size: 2rem;
+    font-weight: 600;
+    width: 28px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.word-display .letter.guess{
+    border-color: transparent;
+    margin: -40px 0 35px;
+
+}
+
+.keyboard button {
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    width: calc(100% / 9 - 5px);
+    padding: 7px;
+    border: none;
+    background-color: white;
+}
+
+.keyboard button[disabled]{
+    opacity: 0.4;
+    pointer-events: none;
+}
+

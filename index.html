@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="word-list.js"></script>
+</head>
+
+<body onkeydown="myFunction(event)" class="bg-[url(/assets/img.jpg)] bg-no-repeat bg-cover bg-top px-40  lg:bg-center flex items-center justify-center min-h-screen">
+    <div class="modal fixed top-0 left-0 flex justify-center items-center w-full h-full opacity-0 pointer-events-none z-[999]">
+        <div class="content bg-white max-w-[420px] w-full text-center rounded p-8">
+            <h4 class="text-2xl"></h4>
+            <p class="mt-4 mx-0 mb-7 font-medium">
+                <b class="text-sky-400 font-semibold"></b>
+            </p>
+            <button class="cursor-pointer play-again border rounded py-3 px-6">Play Again</button>
+        </div>
+    </div>
+    
+
+    <div class="mx-5 game-box flex flex-col justify-center items-center">
+        <h1 class="text-center font-bold text-2xl text-white">Hangman Game</h1>
+        <div class="my-3 flex flex-col items-center text-center">
+            <ul class="word-display py-20 px-6 flex gap-3 list-none items-center justify-center">
+            </ul>
+            <h4 class="text-base hint text-white">
+                Hint:
+                <b class="font-semibold"></b>
+            </h4>
+            <h4 class="text-medium guess-text text-white">
+                Incorrect Guesses:
+                <b class="text-amber-500 font-bold">0 / 6</b>
+            </h4>
+        </div>
+
+        <div class="keyboard flex flex-wrap justify-center mt-5 gap-1.5 w-10/12"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
