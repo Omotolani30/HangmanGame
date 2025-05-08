@@ -1,5 +1,5 @@
 const wordDisplay = document.querySelector(".word-display");
-const guessText = document.querySelector(".guess-text b");
+const guessText = document.querySelector(".guess-text");
 const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".modal");
 const playAgain = document.querySelector(".play-again");
@@ -22,7 +22,7 @@ function getRandomWord() {
   const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
   currentWord = word;
   console.log(word);
-  document.querySelector(".hint b").innerText = hint;
+  document.querySelector(".hint span").innerText = hint;
   resetGame();
 }
 
@@ -31,7 +31,7 @@ function gameOver(isVictory) {
   setTimeout(() => {
     const modalText = isVictory? `You found the word:` : `The correct word was:`;
     gameModal.querySelector("h4").innerText = `${
-      isVictory ? `Congrats!` : `Game Over!`
+      isVictory ? `You Win` : `Game Over!`
     }`;
     gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");

@@ -8,40 +8,58 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="word-list.js"></script>
 </head>
 
-<body onkeydown="myFunction(event)" class="bg-[url(/assets/img.jpg)] bg-no-repeat bg-cover bg-top px-40  lg:bg-center flex items-center justify-center min-h-screen">
-    <div class="modal fixed top-0 left-0 flex justify-center items-center w-full h-full opacity-0 pointer-events-none z-[999]">
-        <div class="content bg-white max-w-[420px] w-full text-center rounded p-8">
-            <h4 class="text-2xl"></h4>
-            <p class="mt-4 mx-0 mb-7 font-medium">
-                <b class="text-sky-400 font-semibold"></b>
+<body onkeydown="myFunction(event)" class="bg-[url(/assets/img1.jpg)] bg-no-repeat bg-cover bg-top lg:bg-center h-full">
+
+    <!-- navigation -->
+    <div class="mx-8 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="menu bg-blue-600 rounded-full p-2 cursor-pointer">
+                <img src="assets/menus.png" alt="menu_icon" class="w-5">
+            </div>
+            <a class="text-white text-xl">Countries</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <b class="guess-text text-white">0 / 6</b>
+            <img src="assets/hearts.png" alt="heart_icon" class="w-10">
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fixed flex left-0 top-0 justify-center items-center w-full h-full z-[999] pointer-events-none opacity-0">
+        <div class="modalContent flex flex-col gap-1 max-w-[250px] w-full text-center rounded-lg p-10 text-white">
+            <h4 class="relative -top-13 lg:-top-15 text-2xl lg:text-4xl">You Win</h4>
+            <p class="mx-0 mb-6">
+                <b class=""></b>
             </p>
-            <button class="cursor-pointer play-again border rounded py-3 px-6">Play Again</button>
+            <div class="flex flex-col items-center gap-10 justify-center">
+                <!-- <button class="cursor-pointer bg-blue-600 rounded-full shadow-md shadow-blue-950 py-3 px-6 w-full hover:bg-blue-800">Continue</button>
+                <button class="cursor-pointer rounded-full bg-blue-600 shadow-md shadow-blue-950 py-3 px-6 w-full hover:bg-blue-800">New Category</button> -->
+                <button class="quitBtn play-again cursor-pointer rounded-full shadow-md py-3 px-6 w-full hover:opacity-80">Restart Game</button>
+            </div>
         </div>
     </div>
     
-
-    <div class="mx-5 game-box flex flex-col justify-center items-center">
-        <h1 class="text-center font-bold text-2xl text-white">Hangman Game</h1>
-        <div class="my-3 flex flex-col items-center text-center">
-            <ul class="word-display py-20 px-6 flex gap-3 list-none items-center justify-center">
-            </ul>
-            <h4 class="text-base hint text-white">
-                Hint:
-                <b class="font-semibold"></b>
-            </h4>
-            <h4 class="text-medium guess-text text-white">
-                Incorrect Guesses:
-                <b class="text-amber-500 font-bold">0 / 6</b>
-            </h4>
+    <!-- main content -->
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="py-5 px-2 mx-5 game-box flex flex-col justify-center items-center">
+            <h1 class="text-center text-2xl text-white">Hangman Game</h1>
+            <div class="my-3 flex flex-col items-center text-center max-w-[350px] px-2 lg:max-w-full lg:px-4">
+                <ul class="text-white word-display py-5 px-3 lg:py-10 lg:px-6 flex gap-1 lg:gap-3 list-none items-center justify-center">
+                </ul>
+                <h4 class="hint text-sm lg:text-base text-white mb-3 p-1">
+                    Hint:
+                    <span class=""></span>
+                </h4>
+            </div>
+    
+            <div class="keyboard flex flex-wrap justify-center mt-5 gap-1.5 w-full"></div>
         </div>
-
-        <div class="keyboard flex flex-wrap justify-center mt-5 gap-1.5 w-10/12"></div>
     </div>
 
     <script src="script.js"></script>

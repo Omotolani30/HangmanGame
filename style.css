@@ -1,9 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: "Happy Monkey", system-ui;
-    /* font-weight: 400;
-    font-style: normal; */
+    /* font-family: "Fruktur", system-ui; */
+    font-family: "Yatra One", system-ui;
 }
 
 .modal {
@@ -14,6 +13,14 @@ body{
 .modal.show {
     opacity: 1;
     pointer-events: auto;
+} 
+
+.modalContent {
+    background: linear-gradient(#4165da,#1e40af);
+    box-shadow: -2px -5px rgb(30 64 145 / var(--tw-bg-opacity, 1));
+}
+.quitBtn, .menu{
+  background: linear-gradient(rgb(196, 12, 196), rgb(6, 137, 212));  
 }
 
 .word-display .letter {
@@ -41,7 +48,6 @@ body{
     text-transform: uppercase;
     width: calc(100% / 9 - 5px);
     padding: 7px;
-    border: none;
     background-color: white;
 }
 
@@ -50,3 +56,25 @@ body{
     pointer-events: none;
 }
 
+
+@media only screen and (max-width: 600px) {
+    .keyboard button {
+        width: calc(100% / 8 - 5px);
+        padding: 10px;
+    } 
+
+    .word-display .letter {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 300;
+        width: 20px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #fff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .word-display .letter.guess{
+        border-color: transparent;
+    }
+}
