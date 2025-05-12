@@ -2,10 +2,28 @@ const wordDisplay = document.querySelector(".word-display");
 const guessText = document.querySelector(".guess-text");
 const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".modal");
+const resetModal = document.querySelector(".resetModal");
 const playAgain = document.querySelector(".play-again");
+const selectedCategory = wordList["random"];
+const navBar = document.querySelector(".navbar");
+
 
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
+
+function openCat() {
+  navBar.style.display = "flex"
+  resetModal.style.display = "none"
+}
+function closeCat() {
+  navBar.style.display = "none"
+}
+function openNav() {
+  resetModal.style.display = "flex"
+}
+function continueGame() {
+  resetModal.style.display = "none"
+}
 
 // restart game
 function resetGame() {
@@ -19,7 +37,7 @@ function resetGame() {
 
 // to get the word list
 function getRandomWord() {
-  const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+  const { word, hint } = selectedCategory[Math.floor(Math.random() * selectedCategory.length)];
   currentWord = word;
   console.log(word);
   document.querySelector(".hint span").innerText = hint;
@@ -33,15 +51,15 @@ function gameOver(isVictory) {
     gameModal.querySelector("h4").innerText = `${
       isVictory ? `You Win` : `Game Over!`
     }`;
-    gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
+    gameModal.querySelector("p").innerHTML = `${modalText} <b class="uppercase">${currentWord}</b>`;
     gameModal.classList.add("show");
   }, 400);
 }
 
+// input field controlled by keyboard
 const myFunction = (event) => {
   let key = event.key.toLowerCase();
   if (!/^[a-z]$/.test(key)) return;
-  // if (!/^[a-z]$/.test(key) && key !== "enter") return;
 
   if (currentWord.includes(key)) {
     if (!correctLetters.includes(key)) {
@@ -60,15 +78,7 @@ const myFunction = (event) => {
   checkGameStatus();
 }
 
-// function modal(event) {
-//   let key = event.key;
-//   if(key == "enter") {
-//     getRandomWord();
-//     console.log(key)
-//   }
-// }
-
-// input field
+// input field controlled by virtual keyboard
 const initGame = (button, clickedLetter) => {
   if (currentWord.includes(clickedLetter)) {
     [...currentWord].forEach((letter, index) => {
@@ -110,6 +120,18 @@ for (let i = 97; i <= 122; i++) {
   button.addEventListener("click", (e) =>
     initGame(e.target, String.fromCharCode(i))
   );
+}
+
+
+function howToPlay() {
+  let ruleList = document.getElementById("ruleList");
+  let playBox = document.getElementById("playBox");
+  ruleList.style.display = "flex"
+  playBox.style.display = "none" 
+}
+function goBackHome(){
+  ruleList.style.display = "none"
+  playBox.style.display = "flex"
 }
 
 getRandomWord();

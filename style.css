@@ -5,23 +5,29 @@ body{
     font-family: "Yatra One", system-ui;
 }
 
-.modal {
-    background-color: rgba(0, 0, 0, 0.7);
+.modal{
+    background-color: rgba(0, 0, 0, 0.5);
     transition: opacity 0.4s ease;
 }
 
-.modal.show {
+.modal.show{
     opacity: 1;
     pointer-events: auto;
 } 
 
 .modalContent {
     background: linear-gradient(#4165da,#1e40af);
-    box-shadow: -2px -5px rgb(30 64 145 / var(--tw-bg-opacity, 1));
+    box-shadow: -2px -5px rgb(30 64 145 / var(--tw-bg-opacity, 4));
 }
-.quitBtn, .menu{
-  background: linear-gradient(rgb(196, 12, 196), rgb(6, 137, 212));  
+
+
+.play-again, .quitBtn, .ctaBtn, .menu, .back-arrow{
+  background: linear-gradient(rgb(255, 84, 244), rgb(140, 74, 255));  
 }
+/* 
+.play-again{
+    box-shadow: 20px 15px rgb(196, 12, 100 / var(--tw-bg-opacity, 1));
+} */
 
 .word-display .letter {
     font-size: 2rem;
