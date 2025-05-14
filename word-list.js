@@ -123,25 +123,25 @@ const options = {
       word: "Up",
       hint: "A heartwarming animated story about an old man and a young boy",
     },
-    {
-      word: "Pulp Fiction",
-      hint: "A crime drama with intertwined stories",
-    },
-    {
-      word: "The Godfather",
-      hint: "A crime saga centered around a mafia family",
-    },
-    {
-      word: "Forrest Gump",
-      hint: "A man with a low IQ unintentionally influences major events in history",
-    },
+    // {
+    //   word: "Pulp Fiction",
+    //   hint: "A crime drama with intertwined stories",
+    // },
+    // {
+    //   word: "The Godfather",
+    //   hint: "A crime saga centered around a mafia family",
+    // },
+    // {
+    //   word: "Forrest Gump",
+    //   hint: "A man with a low IQ unintentionally influences major events in history",
+    // },
     {
       word: "Interstellar",
       hint: "A space exploration film involving wormholes and black holes",
     },
     {
-      word: "The Lion King",
-      hint: "A Disney animated film about a lion cub's journey",
+      word: "Mufasa",
+      hint: "A Disney film about a lost cub's journey",
     },
     {
       word: "Joker",
@@ -157,7 +157,7 @@ const options = {
     },
     { word: "Toy Story", hint: "A story about the secret life of toys" },
     {
-      word: "Black Panther",
+      word: "BlackPanther",
       hint: "A Marvel superhero film set in the fictional African nation of Wakanda",
     },
   ],
@@ -195,10 +195,10 @@ const options = {
       word: "Paella",
       hint: "A Spanish rice dish typically made with seafood and saffron",
     },
-    {
-      word: "Dim Sum",
-      hint: "A variety of Chinese small dishes often served in steamer baskets",
-    },
+    // {
+    //   word: "Dim Sum",
+    //   hint: "A variety of Chinese small dishes often served in steamer baskets",
+    // },
     {
       word: "Churros",
       hint: "A fried dough pastry usually coated in sugar",
@@ -333,10 +333,10 @@ const options = {
       word: "Spain",
       hint: "European country known for flamenco",
     },
-    {
-      word: "South Africa",
-      hint: "Country known for its diverse culture and Nelson Mandela",
-    },
+    // {
+    //   word: "South Africa",
+    //   hint: "Country known for its diverse culture and Nelson Mandela",
+    // },
     {
       word: "Argentina",
       hint: "Country famous for tango and soccer",
@@ -353,10 +353,10 @@ const options = {
       word: "Thailand",
       hint: "Southeast Asian country known for its beaches and temples",
     },
-    {
-      word: "South Korea",
-      hint: "Country known for K-pop and technology",
-    },
+    // {
+    //   word: "South Korea",
+    //   hint: "Country known for K-pop and technology",
+    // },
   ],
 
   bioinformatics: [
@@ -447,10 +447,10 @@ const options = {
       word: "Volleyball",
       hint: "A sport played over a net with a ball",
     },
-    {
-      word: "Table Tennis",
-      hint: "A smaller version of tennis played on a table",
-    },
+    // {
+    //   word: "Table Tennis",
+    //   hint: "A smaller version of tennis played on a table",
+    // },
     {
       word: "Wrestling",
       hint: "A combat sport involving grappling",
