@@ -1,4 +1,4 @@
-const wordList = {
+const options = {
   random: [
     {
       word: "guitar",
@@ -80,216 +80,392 @@ const wordList = {
       word: "galaxy",
       hint: "A vast system of stars, gas, and dust held together by gravity.",
     },
+  ],
+
+  movies: [
     {
-      word: "orchestra",
-      hint: "A large ensemble of musicians playing various instruments.",
+      word: "inception",
+      hint: "A sci-fi thriller about dreams within dreams",
     },
     {
-      word: "volcano",
-      hint: "A mountain or hill with a vent through which lava, rock fragments, hot vapor, and gas are ejected.",
+      word: "titanic",
+      hint: "A historical romance set aboard a doomed ship",
     },
     {
-      word: "novel",
-      hint: "A long work of fiction, typically with a complex plot and characters.",
+      word: "avatar",
+      hint: "A sci-fi epic set on the alien world of Pandora",
     },
     {
-      word: "sculpture",
-      hint: "A three-dimensional art form created by shaping or combining materials.",
+      word: "Gladiator",
+      hint: "A historical drama about a Roman general turned gladiator",
     },
     {
-      word: "symphony",
-      hint: "A long musical composition for a full orchestra, typically in multiple movements.",
+      word: "Matrix",
+      hint: "A hacker discovers a reality-bending conspiracy",
     },
     {
-      word: "architecture",
-      hint: "The art and science of designing and constructing buildings.",
+      word: "Jaws",
+      hint: "A thriller about a killer shark",
     },
     {
-      word: "ballet",
-      hint: "A classical dance form characterized by precise and graceful movements.",
+      word: "Rocky",
+      hint: "A story about an underdog boxer",
     },
     {
-      word: "astronaut",
-      hint: "A person trained to travel and work in space.",
+      word: "Frozen",
+      hint: "A Disney animated movie about two royal sisters",
     },
     {
-      word: "waterfall",
-      hint: "A cascade of water falling from a height.",
+      word: "Shrek",
+      hint: "A comedic animated tale about an ogre",
     },
     {
-      word: "technology",
-      hint: "The application of scientific knowledge for practical purposes.",
+      word: "Up",
+      hint: "A heartwarming animated story about an old man and a young boy",
     },
     {
-      word: "rainbow",
-      hint: "A meteorological phenomenon that is caused by reflection, refraction, and dispersion of light.",
+      word: "Pulp Fiction",
+      hint: "A crime drama with intertwined stories",
     },
     {
-      word: "universe",
-      hint: "All existing matter, space, and time as a whole.",
+      word: "The Godfather",
+      hint: "A crime saga centered around a mafia family",
     },
     {
-      word: "piano",
-      hint: "A musical instrument played by pressing keys that cause hammers to strike strings.",
+      word: "Forrest Gump",
+      hint: "A man with a low IQ unintentionally influences major events in history",
     },
     {
-      word: "vacation",
-      hint: "A period of time devoted to pleasure, rest, or relaxation.",
+      word: "Interstellar",
+      hint: "A space exploration film involving wormholes and black holes",
     },
     {
-      word: "rainforest",
-      hint: "A dense forest characterized by high rainfall and biodiversity.",
+      word: "The Lion King",
+      hint: "A Disney animated film about a lion cub's journey",
     },
     {
-      word: "theater",
-      hint: "A building or outdoor area in which plays, movies, or other performances are staged.",
+      word: "Joker",
+      hint: "A dark origin story of a famous comic book villain",
     },
     {
-      word: "telephone",
-      hint: "A device used to transmit sound over long distances.",
+      word: "Parasite",
+      hint: "A Korean film about class struggles",
     },
     {
-      word: "language",
-      hint: "A system of communication consisting of words, gestures, and syntax.",
+      word: "Coco",
+      hint: "A Disney/Pixar movie about family and traditions in Mexico",
     },
+    { word: "Toy Story", hint: "A story about the secret life of toys" },
     {
-      word: "desert",
-      hint: "A barren or arid land with little or no precipitation.",
-    },
-    {
-      word: "sunflower",
-      hint: "A tall plant with a large yellow flower head.",
-    },
-    {
-      word: "fantasy",
-      hint: "A genre of imaginative fiction involving magic and supernatural elements.",
-    },
-    {
-      word: "telescope",
-      hint: "An optical instrument used to view distant objects in space.",
-    },
-    {
-      word: "breeze",
-      hint: "A gentle wind.",
-    },
-    {
-      word: "oasis",
-      hint: "A fertile spot in a desert where water is found.",
-    },
-    {
-      word: "photography",
-      hint: "The art, process, or practice of creating images by recording light or other electromagnetic radiation.",
-    },
-    {
-      word: "safari",
-      hint: "An expedition or journey, typically to observe wildlife in their natural habitat.",
-    },
-    {
-      word: "planet",
-      hint: "A celestial body that orbits a star and does not produce light of its own.",
-    },
-    {
-      word: "river",
-      hint: "A large natural stream of water flowing in a channel to the sea, a lake, or another such stream.",
-    },
-    {
-      word: "tropical",
-      hint: "Relating to or situated in the region between the Tropic of Cancer and the Tropic of Capricorn.",
-    },
-    {
-      word: "mysterious",
-      hint: "Difficult or impossible to understand, explain, or identify.",
-    },
-    {
-      word: "enigma",
-      hint: "Something that is mysterious, puzzling, or difficult to understand.",
-    },
-    {
-      word: "paradox",
-      hint: "A statement or situation that contradicts itself or defies intuition.",
-    },
-    {
-      word: "puzzle",
-      hint: "A game, toy, or problem designed to test ingenuity or knowledge.",
-    },
-    {
-      word: "whisper",
-      hint: "To speak very softly or quietly, often in a secretive manner.",
-    },
-    {
-      word: "shadow",
-      hint: "A dark area or shape produced by an object blocking the light.",
-    },
-    {
-      word: "secret",
-      hint: "Something kept hidden or unknown to others.",
-    },
-    {
-      word: "curiosity",
-      hint: "A strong desire to know or learn something.",
-    },
-    {
-      word: "unpredictable",
-      hint: "Not able to be foreseen or known beforehand; uncertain.",
-    },
-    {
-      word: "obfuscate",
-      hint: "To confuse or bewilder someone; to make something unclear or difficult to understand.",
-    },
-    {
-      word: "unveil",
-      hint: "To make known or reveal something previously secret or unknown.",
-    },
-    {
-      word: "illusion",
-      hint: "A false perception or belief; a deceptive appearance or impression.",
-    },
-    {
-      word: "moonlight",
-      hint: "The light from the moon.",
-    },
-    {
-      word: "vibrant",
-      hint: "Full of energy, brightness, and life.",
-    },
-    {
-      word: "nostalgia",
-      hint: "A sentimental longing or wistful affection for the past.",
-    },
-    {
-      word: "brilliant",
-      hint: "Exceptionally clever, talented, or impressive.",
+      word: "Black Panther",
+      hint: "A Marvel superhero film set in the fictional African nation of Wakanda",
     },
   ],
 
-  bioInfo: [
+  foods: [
     {
-      word: "Biocoding",
+      word: "Pizza",
+      hint: "A popular Italian dish with a round flat base and various toppings",
+    },
+    {
+      word: "Sushi",
+      hint: "A Japanese dish consisting of vinegared rice and raw fish",
+    },
+    {
+      word: "Tacos",
+      hint: "A Mexican dish with a folded tortilla and filling",
+    },
+    {
+      word: "Burger",
+      hint: "A sandwich consisting of a patty placed inside a sliced bun",
+    },
+    {
+      word: "Pasta",
+      hint: "An Italian dish made from dough and often served with sauce",
+    },
+    {
+      word: "Falafel",
+      hint: "A Middle Eastern deep-fried ball made from chickpeas or fava beans",
+    },
+    {
+      word: "Curry",
+      hint: "A flavorful dish often made with a blend of spices and served with rice",
+    },
+    {
+      word: "Paella",
+      hint: "A Spanish rice dish typically made with seafood and saffron",
+    },
+    {
+      word: "Dim Sum",
+      hint: "A variety of Chinese small dishes often served in steamer baskets",
+    },
+    {
+      word: "Churros",
+      hint: "A fried dough pastry usually coated in sugar",
+    },
+    {
+      word: "Croissant",
+      hint: "A buttery, flaky French pastry",
+    },
+    {
+      word: "Kimchi",
+      hint: "A spicy Korean fermented vegetable dish",
+    },
+    {
+      word: "Biryani",
+      hint: "A South Asian mixed rice dish made with spices, rice, and meat",
+    },
+    {
+      word: "Dumplings",
+      hint: "Small pockets of dough filled with meat, vegetables, or sweets",
+    },
+    {
+      word: "Ramen",
+      hint: "A Japanese noodle soup dish",
+    },
+    {
+      word: "Gelato",
+      hint: "An Italian style of ice cream",
+    },
+    {
+      word: "Goulash",
+      hint: "A Hungarian stew of meat and vegetables",
+    },
+    {
+      word: "Pierogi",
+      hint: "Polish dumplings filled with meat, cheese, or potatoes",
+    },
+    {
+      word: "Empanada",
+      hint: "A pastry filled with meat, cheese, or other ingredients",
+    },
+    {
+      word: "Baklava",
+      hint: "A sweet Middle Eastern dessert made with layers of pastry and nuts",
+    },
+  ],
+
+  animals: [
+    {
+      word: "chameleon",
+      hint: "Known for its ability to camouflage and change color to match its surroundings.",
+    },
+    {
+      word: "elephant",
+      hint: "Largest land animal.",
+    },
+    {
+      word: "snail",
+      hint: "A slow moving creature with slime.",
+    },
+    {
+      word: "tortoise",
+      hint: "Slow and steady wins the race.",
+    },
+    {
+      word: "giraffe",
+      hint: "Hey, I can see the whole world.",
+    },
+    {
+      word: "hippopotamus",
+      hint: "Largest sea animal.",
+    },
+    {
+      word: "frog",
+      hint: "I croak and I can be poisonous",
+    },
+  ],
+
+  countries: [
+    {
+      word: "Nigeria",
+      hint: "Most populous country in Africa",
+    },
+    {
+      word: "Japan",
+      hint: "Island nation known for sushi and anime",
+    },
+    {
+      word: "Brazil",
+      hint: "Home of the Amazon rainforest and carnival",
+    },
+    {
+      word: "Canada",
+      hint: "Second largest country by area",
+    },
+    {
+      word: "India",
+      hint: "Second most populous country in the world",
+    },
+    {
+      word: "Australia",
+      hint: "Continent and country known for kangaroos",
+    },
+    {
+      word: "Egypt",
+      hint: "Country famous for ancient pyramids",
+    },
+    {
+      word: "France",
+      hint: "Home of the Eiffel Tower",
+    },
+    {
+      word: "Kenya",
+      hint: "Known for its wildlife safaris",
+    },
+    {
+      word: "Italy",
+      hint: "Boot-shaped European country",
+    },
+    {
+      word: "China",
+      hint: "Country with the Great Wall",
+    },
+    {
+      word: "Russia",
+      hint: "Largest country in the world by area",
+    },
+    {
+      word: "Greece",
+      hint: "Birthplace of democracy",
+    },
+    {
+      word: "Spain",
+      hint: "European country known for flamenco",
+    },
+    {
+      word: "South Africa",
+      hint: "Country known for its diverse culture and Nelson Mandela",
+    },
+    {
+      word: "Argentina",
+      hint: "Country famous for tango and soccer",
+    },
+    {
+      word: "Turkey",
+      hint: "Where Europe meets Asia",
+    },
+    {
+      word: "Mexico",
+      hint: "Country known for tacos and mariachi",
+    },
+    {
+      word: "Thailand",
+      hint: "Southeast Asian country known for its beaches and temples",
+    },
+    {
+      word: "South Korea",
+      hint: "Country known for K-pop and technology",
+    },
+  ],
+
+  bioinformatics: [
+    {
+      word: "biocoding",
       hint: "The process of encoding or classifying biological organisms.",
     },
     {
-      word: "Genetic Code",
-      hint: "The set of rules that determines how DNA sequences are translated into proteins.",
-    },
-    {
-      word: "Codons",
+      word: "codons",
       hint: "Three-letter sequences of DNA or RNA that specify a particular amino acid in protein synthesis.",
     },
     {
-      word: "DNA/RNA",
+      word: "dna",
       hint: "The molecules that carry the genetic code and are fundamental to life.",
     },
     {
-      word: "Classification",
+      word: "classification",
       hint: "Grouping organisms based on shared characteristics, which can include biocodes.",
     },
     {
-      word: "Taxonomy",
+      word: "taxonomy",
       hint: "The science of classifying organisms.",
     },
     {
-      word: "Genes",
+      word: "genes",
       hint: "The basic units of heredity, responsible for transmitting traits from one generation to the next.",
+    },
+  ],
+
+  sports: [
+    {
+      word: "Soccer",
+      hint: "A game played with a round ball and two goals",
+    },
+    {
+      word: "Basketball",
+      hint: "A sport involving shooting hoops",
+    },
+    {
+      word: "Tennis",
+      hint: "A racquet sport played on a court",
+    },
+    {
+      word: "Cricket",
+      hint: "A bat-and-ball game popular in South Asia",
+    },
+    {
+      word: "Rugby",
+      hint: "A contact sport involving an oval ball",
+    },
+    {
+      word: "Baseball",
+      hint: "A bat-and-ball game played on a diamond-shaped field",
+    },
+    {
+      word: "Golf",
+      hint: "A game played by hitting a small ball into a hole",
+    },
+    {
+      word: "Boxing",
+      hint: "A combat sport involving fists",
+    },
+    {
+      word: "Swimming",
+      hint: "A sport involving moving through water",
+    },
+    {
+      word: "Athletics",
+      hint: "Track and field events",
+    },
+    {
+      word: "Badminton",
+      hint: "A racquet sport played with a shuttlecock",
+    },
+    {
+      word: "Cycling",
+      hint: "A sport involving riding bicycles",
+    },
+    {
+      word: "Skating",
+      hint: "A sport involving gliding on wheels or blades",
+    },
+    {
+      word: "Hockey",
+      hint: "A game played on ice or field with sticks",
+    },
+    {
+      word: "Volleyball",
+      hint: "A sport played over a net with a ball",
+    },
+    {
+      word: "Table Tennis",
+      hint: "A smaller version of tennis played on a table",
+    },
+    {
+      word: "Wrestling",
+      hint: "A combat sport involving grappling",
+    },
+    {
+      word: "Surfing",
+      hint: "A water sport involving riding waves",
+    },
+    {
+      word: "Karate",
+      hint: "A martial art originating in Japan",
+    },
+    {
+      word: "Darts",
+      hint: "A precision sport involving small projectiles",
     },
   ],
 };

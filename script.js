@@ -4,25 +4,27 @@ const keyboardDiv = document.querySelector(".keyboard");
 const gameModal = document.querySelector(".modal");
 const resetModal = document.querySelector(".resetModal");
 const playAgain = document.querySelector(".play-again");
-const selectedCategory = wordList["random"];
-const navBar = document.querySelector(".navbar");
-
+const optionContainer = document.querySelector(".option-container");
+const navbar = document.querySelector(".navbar");
 
 let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
 
+// category section
 function openCat() {
-  navBar.style.display = "flex"
-  resetModal.style.display = "none"
+  optionContainer.style.display = "flex";
+  resetModal.style.display = "none";
 }
 function closeCat() {
-  navBar.style.display = "none"
+  optionContainer.style.display = "none";
 }
+
+// navigation
 function openNav() {
-  resetModal.style.display = "flex"
+  resetModal.style.display = "flex";
 }
 function continueGame() {
-  resetModal.style.display = "none"
+  resetModal.style.display = "none";
 }
 
 // restart game
@@ -35,11 +37,30 @@ function resetGame() {
   gameModal.classList.remove("show");
 }
 
-// to get the word list
-function getRandomWord() {
-  const { word, hint } = selectedCategory[Math.floor(Math.random() * selectedCategory.length)];
-  currentWord = word;
-  console.log(word);
+let lastCategory = "random";
+
+function getCategory(category = "random") {
+  lastCategory = category;
+  const selectedCategory = options[category];
+
+  if(!selectedCategory) {
+    console.error("This category doesn't exist")
+    return;
+  }
+
+  const displayNavbar = () => {
+    navbar.innerHTML = `<h3 onclick="openCat()" class="text-white text-xl cursor-pointer uppercase">${category}</h3>`
+  }
+  displayNavbar();
+
+  getRandomWord(selectedCategory);
+  closeCat();
+}
+
+function getRandomWord(optionArray) {
+  const { word, hint } = optionArray[Math.floor(Math.random() * optionArray.length)];
+  currentWord = word.toLowerCase();
+  console.log(word,":", hint);
   document.querySelector(".hint span").innerText = hint;
   resetGame();
 }
@@ -48,9 +69,7 @@ function getRandomWord() {
 function gameOver(isVictory) {
   setTimeout(() => {
     const modalText = isVictory? `You found the word:` : `The correct word was:`;
-    gameModal.querySelector("h4").innerText = `${
-      isVictory ? `You Win` : `Game Over!`
-    }`;
+    gameModal.querySelector("h4").innerText = `${isVictory ? `You Win` : `Game Over!`}`;
     gameModal.querySelector("p").innerHTML = `${modalText} <b class="uppercase">${currentWord}</b>`;
     gameModal.classList.add("show");
   }, 400);
@@ -76,7 +95,7 @@ const myFunction = (event) => {
   }
   guessText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
   checkGameStatus();
-}
+};
 
 // input field controlled by virtual keyboard
 const initGame = (button, clickedLetter) => {
@@ -97,12 +116,12 @@ const initGame = (button, clickedLetter) => {
 };
 
 const checkGuessStatus = () => {
-    if (wrongGuessCount >= 6) {
-        wrongGuessCount;
-      } else {
-        wrongGuessCount++;
-      }
-}
+  if (wrongGuessCount >= 6) {
+    wrongGuessCount;
+  } else {
+    wrongGuessCount++;
+  }
+};
 
 const checkGameStatus = () => {
   if (wrongGuessCount === maxGuesses) {
@@ -122,17 +141,16 @@ for (let i = 97; i <= 122; i++) {
   );
 }
 
-
 function howToPlay() {
   let ruleList = document.getElementById("ruleList");
   let playBox = document.getElementById("playBox");
-  ruleList.style.display = "flex"
-  playBox.style.display = "none" 
+  ruleList.style.display = "flex";
+  playBox.style.display = "none";
 }
-function goBackHome(){
-  ruleList.style.display = "none"
-  playBox.style.display = "flex"
+function goBackHome() {
+  ruleList.style.display = "none";
+  playBox.style.display = "flex";
 }
 
-getRandomWord();
-playAgain.addEventListener("click", getRandomWord);
+getCategory();
+playAgain.addEventListener("click", () => getCategory(lastCategory));

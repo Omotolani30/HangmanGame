@@ -1,7 +1,6 @@
 body{
     margin: 0;
     padding: 0;
-    /* font-family: "Fruktur", system-ui; */
     font-family: "Yatra One", system-ui;
 }
 
@@ -20,14 +19,9 @@ body{
     box-shadow: -2px -5px rgb(30 64 145 / var(--tw-bg-opacity, 4));
 }
 
-
-.play-again, .quitBtn, .ctaBtn, .menu, .back-arrow{
+.play-again, .quitBtn, .ctaBtn, .menu, .arrow-left{
   background: linear-gradient(rgb(255, 84, 244), rgb(140, 74, 255));  
 }
-/* 
-.play-again{
-    box-shadow: 20px 15px rgb(196, 12, 100 / var(--tw-bg-opacity, 1));
-} */
 
 .word-display .letter {
     font-size: 2rem;
