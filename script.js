@@ -60,7 +60,6 @@ function getCategory(category = "random") {
 function getRandomWord(optionArray) {
   const { word, hint } = optionArray[Math.floor(Math.random() * optionArray.length)];
   currentWord = word.toLowerCase();
-  console.log(word,":", hint);
   document.querySelector(".hint span").innerText = hint;
   resetGame();
 }
